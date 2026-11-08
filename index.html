@@ -13,7 +13,7 @@
         window.location.replace(pathname + "/" + search + hash);
       }
     </script>
-    <link rel="stylesheet" crossorigin href="/assets/landing-D6FwptSi.css">
+    <link rel="stylesheet" crossorigin href="/assets/landing-BmH6d9yR.css">
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -23,9 +23,15 @@
           <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="m16 6 9 5v10l-9 5-9-5V11Zm-9 5 9 5 9-5m-9 5v10" fill="none" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
           <span>WebCAD<span class="wordmark-period">.</span></span>
         </a>
-        <nav aria-label="Main navigation">
-          <a class="header-tools" href="#tools">Tools</a>
-          <a class="button button-small" href="/workspace/">Open Workspace <span aria-hidden="true">↗</span></a>
+        <nav aria-label="WebCAD tools">
+          <a href="/workspace/">Workspace</a>
+          <a href="/gear-generator/">Gear Generator</a>
+          <a href="/svg-extruder/">SVG Extruder</a>
+          <a href="/boolean-operations/">Boolean Operations</a>
+          <a href="/mesh-editor/">Mesh Editor</a>
+          <a href="/model-stand/">Model Stand</a>
+          <a href="/dxf-viewer/">DXF Viewer</a>
+          <a href="/text-extruder/">Text Extruder</a>
         </nav>
       </div>
     </header>
@@ -63,7 +69,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="workspace-name">Workspace</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="workspace-description">Add boxes, cylinders and spheres or extrude a profile. Set dimensions in millimeters and export to STL.</p>
+                  <p id="workspace-description">Build with boxes, cylinders and spheres, or extrude a rectangular or circular profile. Set dimensions and positions in millimeters and rotate bodies around the vertical axis.</p>
+                  <p>Download an editable JSON project or export the visible bodies as STL.</p>
                 </div>
               </a>
             </article>
@@ -75,7 +82,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="gear-name">Gear Generator</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="gear-description">Set the tooth count, bore diameter and face width. Export the 3D gear as STL or its flat profile as SVG or DXF.</p>
+                  <p id="gear-description">Set the tooth count, module or pitch diameter, pressure angle, bore and face width. Preview spur, helical or herringbone gears in 3D and add a hub if needed.</p>
+                  <p>Download the gear as STL or its 2D profile as SVG or DXF.</p>
                 </div>
               </a>
             </article>
@@ -87,7 +95,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="svg-name">SVG Extruder</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="svg-description">Turn a filled SVG into a 3D model. Set its size and thickness, then download the STL.</p>
+                  <p id="svg-description">Open a filled SVG and set its longest side and thickness in millimeters. Overlapping fills merge, and holes and separate shapes are preserved.</p>
+                  <p>Convert text and strokes to filled paths before importing. Download the extruded model as STL.</p>
                 </div>
               </a>
             </article>
@@ -99,7 +108,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="boolean-name">Boolean Operations</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="boolean-description">Combine two STL models, cut one from the other, or keep their overlap. Preview and download the result.</p>
+                  <p id="boolean-description">Open two closed STL meshes that use the same scale. Move or rotate the second model to line up the parts.</p>
+                  <p>Join the meshes, subtract the second from the first or keep only their overlap. Preview the result and export it as STL.</p>
                 </div>
               </a>
             </article>
@@ -111,7 +121,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="mesh-editor-name">Mesh Editor</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="mesh-editor-description">Twist or resize an STL, drill a round hole, add material or smooth part of its surface.</p>
+                  <p id="mesh-editor-description">Open a closed STL. Twist the mesh around an axis or scale each axis separately. Pick a point on the surface to drill a through-hole or add a cylinder.</p>
+                  <p>Smooth a patch or the whole mesh. Use undo and redo to review edits, then export the result as STL.</p>
                 </div>
               </a>
             </article>
@@ -123,7 +134,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="stand-name">Model Stand</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="stand-description">Open an STL, OBJ or 3MF model and frame it in an orthographic view. Record it rotating in place or choose a camera flyby.</p>
+                  <p id="stand-description">Open an STL, OBJ or basic 3MF model. Frame it in an orthographic view and adjust rotation speed, shadows and the optional watermark.</p>
+                  <p>Record a turntable or camera flyby with the built-in soundtrack. Download MP4 or WebM, depending on browser support.</p>
                 </div>
               </a>
             </article>
@@ -135,7 +147,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="dxf-name">DXF Viewer</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="dxf-description">Open a 2D DXF, check its dimensions and layers, and export visible outlines as SVG.</p>
+                  <p id="dxf-description">Open a text-based DXF with lines, arcs, circles or 2D polylines. Check dimensions and toggle layers to isolate the geometry you need.</p>
+                  <p>Export the visible outlines as SVG. When the DXF declares supported units, the SVG keeps its physical scale.</p>
                 </div>
               </a>
             </article>
@@ -147,7 +160,8 @@
                 </div>
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="text-name">Text Extruder</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
-                  <p id="text-description">Choose a font, set the depth and turn lettering into an STL model.</p>
+                  <p id="text-description">Type one or more lines and choose Noto Sans or Noto Serif, or load a TTF or OTF font. Set the font size, depth and spacing.</p>
+                  <p>Check the measured dimensions and export the lettering as STL. The extrusion preserves holes inside letters.</p>
                 </div>
               </a>
             </article>
