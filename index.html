@@ -14,9 +14,10 @@
         window.location.replace(pathname + "/" + search + hash);
       }
     </script>
-    <script type="module" crossorigin src="/assets/landing-i_3emFVy.js"></script>
+    <script type="module" crossorigin src="/assets/landing-CqcN5Lxq.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/assets/landing-QkJbxAZy.css">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-BXl3LOEh.js">
+    <link rel="stylesheet" crossorigin href="/assets/landing-Cbr_SLuM.css">
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -49,21 +50,28 @@
             <a class="text-link" href="#tools">See all tools <span aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <figure class="hero-demo">
-          <div class="demo-header mono">
-            <span><span class="figure-dot" aria-hidden="true"></span> Workspace</span>
-            <span>3D timelapse</span>
+        <figure class="hero-demo" id="modeling-demo">
+          <div class="modeling-stage">
+            <img src="/assets/motor-mount-preview-CXCrb6_J.webp" alt="Isometric view of a motor mounting bracket with a stepped bore and mounting holes" width="696" height="459" />
+            <canvas tabindex="0" aria-label="Interactive 3D model. Drag or use the arrow keys to orbit the current step." aria-describedby="hero-demo-steps"></canvas>
+            <div class="modeling-heading mono">
+              <span><span class="figure-dot" aria-hidden="true"></span> Modeling</span>
+              <span data-model-count>01 / 12</span>
+            </div>
+            <div class="modeling-step">
+              <span data-model-title>Motor mount</span>
+              <span data-model-detail>Drag to orbit</span>
+            </div>
           </div>
-          <video id="hero-demo" width="1040" height="622" poster="/assets/hero-workspace-poster-BZsIxt8q.webp"
-            preload="none" muted playsinline loop controls aria-label="Workspace modeling demo"
-            aria-describedby="hero-demo-steps">
-            <source src="/assets/hero-workspace-demo-DYtom9j_.mp4" type="video/mp4" />
-            Your browser cannot play the Workspace modeling video.
-          </video>
+          <progress class="modeling-progress" value="0" max="12" aria-label="Modeling step"></progress>
           <figcaption class="demo-caption">
-            <span>Modeling a machine vise</span>
-            <a href="/workspace/">Try Workspace <span aria-hidden="true">↗</span></a>
-            <span class="sr-only" id="hero-demo-steps">The video starts with a box for the base. A rectangular profile is extruded for the fixed jaw, then copied and moved to make the sliding jaw. Next come the guide rails, jaw plates and handle. The camera orbits the finished vise.</span>
+            <div class="modeling-controls" aria-label="Modeling playback">
+              <button type="button" data-model-prev aria-label="Previous modeling step">‹</button>
+              <button type="button" data-model-toggle>Play</button>
+              <button type="button" data-model-next aria-label="Next modeling step">›</button>
+            </div>
+            <a href="/workspace/?example=motor-mount">Edit this model <span aria-hidden="true">↗</span></a>
+            <span class="sr-only" id="hero-demo-steps">A sketch becomes the mounting plate and upright. Circles drawn on their faces become a boss, a bore, a recess, and a mirrored pattern of holes with equal diameters. The last steps chamfer the base, round the upright, and increase the base width.</span>
           </figcaption>
         </figure>
       </section>

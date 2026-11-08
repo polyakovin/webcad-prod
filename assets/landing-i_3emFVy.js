@@ -1,1 +1,0 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";const e=document.querySelector("#hero-demo"),t=window.matchMedia("(prefers-reduced-motion: reduce)");if(e&&!t.matches&&"IntersectionObserver"in window){const o=new IntersectionObserver(([r])=>{!r||r.intersectionRatio<.35||(o.disconnect(),!t.matches&&e.paused&&e.play().catch(()=>{}))},{threshold:.35});o.observe(e)}
