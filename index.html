@@ -9,11 +9,11 @@
     <script>
       // Vite's preview falls back here for slashless directory URLs.
       const { pathname, search, hash } = window.location;
-      if (["/workspace", "/gear-generator", "/svg-extruder", "/model-stand"].includes(pathname)) {
+      if (["/mesh-editor", "/workspace", "/gear-generator", "/boolean-operations", "/svg-extruder", "/model-stand", "/dxf-viewer", "/text-extruder"].includes(pathname)) {
         window.location.replace(pathname + "/" + search + hash);
       }
     </script>
-    <link rel="stylesheet" crossorigin href="/assets/landing-DpZacdgl.css">
+    <link rel="stylesheet" crossorigin href="/assets/landing-D6FwptSi.css">
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -92,6 +92,30 @@
               </a>
             </article>
             <article class="tool">
+              <a class="tool-link" href="/boolean-operations/" aria-labelledby="boolean-name" aria-describedby="boolean-description">
+                <div class="tool-art tool-art-boolean">
+                  <span class="tool-number mono" aria-hidden="true">STL / MODIFY</span>
+                  <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%20150'%20width='280'%20height='150'%20fill='none'%3e%3cg%20stroke='%23343d44'%20stroke-width='1.45'%20stroke-linejoin='round'%3e%3cpath%20fill='%23a3b8c0'%20d='m42%2069%2090%2044%2095-47v26l-95%2047-90-44z'/%3e%3cpath%20fill='%23d5e0e1'%20d='m42%2069%2095-47%2090%2044-95%2047z'/%3e%3cpath%20stroke='%23647982'%20d='M132%20113v26'/%3e%3cellipse%20cx='134'%20cy='67'%20rx='27'%20ry='13'%20fill='%23637a87'/%3e%3cpath%20fill='%23a3b8c0'%20d='M109%2071a27%2013%200%200%201%2050%200%2027%2013%200%200%201-50%200Z'/%3e%3cpath%20stroke='%23a9482b'%20stroke-dasharray='3%204'%20d='M107%2035v31m54-31v31'/%3e%3cpath%20fill='%23e2ab8d'%20stroke='%239a4b33'%20d='M107%2025v17a27%2013%200%200%200%2054%200V25Z'/%3e%3cellipse%20cx='134'%20cy='25'%20rx='27'%20ry='13'%20fill='%23f1c8ac'%20stroke='%239a4b33'/%3e%3c/g%3e%3c/svg%3e" alt="" width="280" height="150" />
+                </div>
+                <div class="tool-body">
+                  <div class="tool-title"><h3 id="boolean-name">Boolean Operations</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
+                  <p id="boolean-description">Combine two STL models, cut one from the other, or keep their overlap. Preview and download the result.</p>
+                </div>
+              </a>
+            </article>
+            <article class="tool">
+              <a class="tool-link" href="/mesh-editor/" aria-labelledby="mesh-editor-name" aria-describedby="mesh-editor-description">
+                <div class="tool-art tool-art-mesh">
+                  <span class="tool-number mono" aria-hidden="true">STL / EDIT</span>
+                  <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%20150'%3e%3cg%20transform='translate(90%2010)'%20stroke='%23304654'%20stroke-width='1.7'%20stroke-linejoin='round'%3e%3cpath%20fill='%237b9bab'%20d='M8%20104%2048%2082%2094%20101%2053%20125Z'/%3e%3cpath%20fill='%23a0bac5'%20d='M8%20104%2017%2083%2034%2061%2058%2041%2053%2072%2047%2094%2053%20125Z'/%3e%3cpath%20fill='%23648b9e'%20d='M53%20125%2047%2094%2053%2072%2058%2041%2097%2020%2083%2045%2080%2074%2094%20101Z'/%3e%3cpath%20fill='%23cadae0'%20d='M58%2041%2024%2018%2062%200%2097%2020Z'/%3e%3cpath%20fill='none'%20opacity='.5'%20d='M17%2083%2047%2094%2080%2074M34%2061%2053%2072%2083%2045'/%3e%3c/g%3e%3cpath%20fill='none'%20stroke='%23ad492c'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%20d='M200%2047c17%207%2019%2018-2%2026m0%200%206-8m-6%208%2010%201'/%3e%3c/svg%3e" alt="" width="280" height="150" />
+                </div>
+                <div class="tool-body">
+                  <div class="tool-title"><h3 id="mesh-editor-name">Mesh Editor</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
+                  <p id="mesh-editor-description">Twist or resize an STL, drill a round hole, add material or smooth part of its surface.</p>
+                </div>
+              </a>
+            </article>
+            <article class="tool">
               <a class="tool-link" href="/model-stand/" aria-labelledby="stand-name" aria-describedby="stand-description">
                 <div class="tool-art tool-art-stand">
                   <span class="tool-number mono" aria-hidden="true">04 / PRESENT</span>
@@ -100,6 +124,30 @@
                 <div class="tool-body">
                   <div class="tool-title"><h3 id="stand-name">Model Stand</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
                   <p id="stand-description">Open an STL, OBJ or 3MF model and frame it in an orthographic view. Record it rotating in place or choose a camera flyby.</p>
+                </div>
+              </a>
+            </article>
+            <article class="tool">
+              <a class="tool-link" href="/dxf-viewer/" aria-labelledby="dxf-name" aria-describedby="dxf-description">
+                <div class="tool-art tool-art-dxf">
+                  <span class="tool-number mono" aria-hidden="true">2D / INSPECT</span>
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyODAiIGhlaWdodD0iMTUwIiB2aWV3Qm94PSIwIDAgMjgwIDE1MCIgZmlsbD0ibm9uZSI+CiAgPGcgc3Ryb2tlPSIjNjA4NDg2IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQgMyI+CiAgICA8cGF0aCBkPSJNMTQwIDE3djEwOE01OSA3MWgxNjIiLz4KICA8L2c+CiAgPGcgc3Ryb2tlPSIjMjQzYjQ2IiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICA8cmVjdCB4PSI2NyIgeT0iMzEiIHdpZHRoPSIxNDYiIGhlaWdodD0iODAiIHJ4PSIxMCIvPgogICAgPGNpcmNsZSBjeD0iMTQwIiBjeT0iNzEiIHI9IjI1LjUiLz4KICAgIDxjaXJjbGUgY3g9IjgyIiBjeT0iNDYiIHI9IjQuMyIvPgogICAgPGNpcmNsZSBjeD0iMTk4IiBjeT0iNDYiIHI9IjQuMyIvPgogICAgPGNpcmNsZSBjeD0iODIiIGN5PSI5NiIgcj0iNC4zIi8+CiAgICA8Y2lyY2xlIGN4PSIxOTgiIGN5PSI5NiIgcj0iNC4zIi8+CiAgPC9nPgogIDxnIHN0cm9rZT0iI2E1NGYzMyIgc3Ryb2tlLXdpZHRoPSIxIj4KICAgIDxwYXRoIGQ9Ik02NyAxMTN2MjNtMTQ2LTIzdjIzbS0xNDYtNWg1N20zMiAwaDU3bS0xNDEtMy01IDMgNSAzbTEzNi02IDUgMy01IDMiLz4KICA8L2c+CiAgPHRleHQgeD0iMTQwIiB5PSIxMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5MjQ2MjkiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTAiPjEyMDwvdGV4dD4KPC9zdmc+Cg==" alt="" width="280" height="150" />
+                </div>
+                <div class="tool-body">
+                  <div class="tool-title"><h3 id="dxf-name">DXF Viewer</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
+                  <p id="dxf-description">Open a 2D DXF, check its dimensions and layers, and export visible outlines as SVG.</p>
+                </div>
+              </a>
+            </article>
+            <article class="tool">
+              <a class="tool-link" href="/text-extruder/" aria-labelledby="text-name" aria-describedby="text-description">
+                <div class="tool-art tool-art-text">
+                  <span class="tool-number mono" aria-hidden="true">FONT / EXTRUDE</span>
+                  <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%20150'%20fill='none'%3e%3cdefs%3e%3cpath%20id='letters'%20fill-rule='evenodd'%20d='M41%20103%2066%2040h18l25%2063H92l-5-14H62l-5%2014H41Zm26-28h15l-7-21-8%2021Zm52-35h25v63h-25V40Zm41%200h26c20%200%2033%2013%2033%2031s-13%2032-33%2032h-26V40Zm16%2014v35h10c10%200%2017-7%2017-18s-7-17-17-17h-10Z'/%3e%3c/defs%3e%3cg%20transform='translate(8%204)%20skewX(-9)'%3e%3cuse%20href='%23letters'%20transform='translate(15%2012)'%20fill='%23bd805f'%20stroke='%234e392f'%20stroke-width='2'%20stroke-linejoin='round'/%3e%3cpath%20d='m41%20103%2015%2012h16l-15-12m52%200%2015%2012h-17l-15-12m27%200%2015%2012h25l-15-12m16%200%2015%2012h26c13%200%2023-6%2029-14l-15-12m-39-35%2015%2012h10'%20fill='%23bd805f'%20stroke='%234e392f'%20stroke-width='2'%20stroke-linejoin='round'/%3e%3cuse%20href='%23letters'%20fill='%23fff7e8'%20stroke='%234e392f'%20stroke-width='2'%20stroke-linejoin='round'/%3e%3c/g%3e%3c/svg%3e" alt="" width="280" height="150" />
+                </div>
+                <div class="tool-body">
+                  <div class="tool-title"><h3 id="text-name">Text Extruder</h3><span class="tool-arrow" aria-hidden="true">↗</span></div>
+                  <p id="text-description">Choose a font, set the depth and turn lettering into an STL model.</p>
                 </div>
               </a>
             </article>
