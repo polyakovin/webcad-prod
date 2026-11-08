@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f5f7">
-  <meta name="description" content="Present 3D models in WebCAD: open STL, OBJ or 3MF locally, adjust an orthographic view, and record a flyby with music.">
+  <meta name="description" content="Open an STL, OBJ or basic 3MF file in your browser. Frame the model in an orthographic view and record a turntable or flyby video with music.">
   <title>Model Stand · WebCAD</title>
-  <script type="module" crossorigin src="/assets/modelStand-u011QS7k.js"></script>
+  <script type="module" crossorigin src="/assets/modelStand-BoiZGznf.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/site-navigation-XQrK8i1V.js">
   <link rel="modulepreload" crossorigin href="/assets/three.module-U7kSSQIT.js">
   <link rel="stylesheet" crossorigin href="/assets/site-navigation-DQ91S4b_.css">
@@ -22,7 +22,7 @@
     <section class="viewport" id="viewport" aria-label="Orthographic model viewer">
       <div id="canvas-host"><div id="watermark" class="watermark" aria-hidden="true" hidden><span>WEBCAD.DEV</span></div></div>
       <div class="view-label"><span class="eyebrow">MODEL PRESENTATION</span><h1 id="view-title">Spiral vase</h1><span id="model-kind" class="small-label">Demo model</span></div>
-      <div class="projection-badge"><strong id="projection-name">ISO</strong><span>No perspective</span></div>
+      <div class="projection-badge"><strong id="projection-name">ISO</strong><span>Orthographic</span></div>
       <div class="drop-overlay" id="drop-overlay" hidden><div class="drop-symbol">↓</div><strong>Drop your model here</strong><span>STL · OBJ · 3MF</span></div>
       <div class="viewer-error" id="viewer-error" role="alert" hidden></div>
       <div class="view-footer">
@@ -30,12 +30,12 @@
         <div class="view-hint" id="view-hint">Zoom 1.0× · orthographic view</div>
         <button class="icon-button reset-view" id="reset-view" aria-label="Reset framing" title="Reset zoom and camera position (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z"/></svg></button>
       </div>
-      <div class="loading" id="loading" role="status" hidden><span class="spinner"></span>Reading geometry…</div>
+      <div class="loading" id="loading" role="status" hidden><span class="spinner"></span>Loading model…</div>
     </section>
     <aside class="controls" aria-label="Presentation settings">
       <section class="control-section file-section">
         <div class="section-heading"><h2>Model</h2><span class="section-number">01</span></div>
-        <button class="upload-button" id="upload-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg><strong>Open model</strong><span>or drop a file onto this page</span><span class="file-types">STL · OBJ · 3MF <span>up to 500 MiB</span></span></button>
+        <button class="upload-button" id="upload-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg><strong>Open model</strong><span>or drop it here</span><span class="file-types">STL · OBJ · 3MF <span>up to 500 MiB</span></span></button>
         <input type="file" id="file-input" accept=".stl,.obj,.3mf" hidden>
         <p class="error-message" id="file-error" role="alert" hidden></p>
         <div class="model-info"><span id="file-name">Spiral vase</span><span id="triangle-count">—</span></div>
@@ -47,7 +47,7 @@
         <div class="watermark-section music-section">
           <label class="switch-row" for="music-enabled"><span>Background music</span><input id="music-enabled" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
           <p class="watermark-caption" id="music-status" role="status">Rotating Form · off</p>
-          <p class="error-message" id="music-error" role="alert" hidden>Could not play the music. Please try again.</p>
+          <p class="error-message" id="music-error" role="alert" hidden>Could not play Rotating Form. Turn Background music on again to retry.</p>
         </div>
         <div class="watermark-section lighting-section">
           <label class="switch-row" for="lighting-enabled"><span>Studio shadows</span><input id="lighting-enabled" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label>
@@ -67,7 +67,6 @@
         <div class="readout zoom-readout"><label for="zoom">Model zoom</label><div><output id="zoom-value" for="zoom">1.0</output><span>×</span></div></div>
         <input class="range" id="zoom" type="range" min="1" max="4" step="0.25" value="1" aria-label="Model zoom">
         <div class="range-labels"><span>1×</span><span>2.5×</span><span>4×</span></div>
-        <p class="control-note">Adjust the slider for smooth zoom. The view stays orthographic.</p>
       </section>
       <section class="control-section view-section">
         <div class="section-heading"><h2>View</h2><span class="section-number">04</span></div>
@@ -81,7 +80,7 @@
         <input class="range" id="z-offset" type="range" min="-100" max="100" step="5" value="0" aria-label="Camera offset along Z">
         <div class="range-labels"><span>−100%</span><span>0</span><span>+100%</span></div>
         <button class="pause-button view-reset" id="reset-angle">Reset to isometric</button>
-        <p class="control-note">Z offset moves the camera and framing along the vertical model axis. The view stays orthographic.</p>
+        <p class="control-note">Use Z offset to move the framing up or down without tilting the camera.</p>
       </section>
       <section class="control-section export-section">
         <div class="section-heading"><h2>Video</h2><span class="section-number">05</span></div>
@@ -92,26 +91,26 @@
           <option value="beat-cut">Beat cuts</option>
           <option value="spiral">Spiral rise</option>
         </select>
-        <p class="flight-description" id="flight-description">Steady model rotation at the current speed and direction.</p>
+        <p class="flight-description" id="flight-description">The model makes one full turn at the speed and direction you set.</p>
         <label class="field-label" for="video-format">File format</label>
         <select class="flight-select" id="video-format">
           <option value="mp4">MP4</option>
           <option value="webm">WebM</option>
         </select>
-        <p class="flight-description" id="format-description">MP4 is preferred when supported. WebM is available for compatible platforms.</p>
+        <p class="flight-description" id="format-description">WebCAD selects MP4 when your browser can record it.</p>
         <div class="export-actions">
           <button class="pause-button preview-button" id="preview-flight" aria-pressed="false"><span id="preview-flight-label">Preview</span></button>
           <button class="pause-button export-button" id="export-video" aria-pressed="false"><span id="export-video-label">Record video</span></button>
         </div>
         <div class="export-progress" id="export-progress" role="progressbar" aria-label="Video recording progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><span id="export-progress-bar"></span></div>
         <p class="rotation-status" id="export-status" role="status">Turntable · 30 s · full rotation</p>
-        <p class="control-note">Cinematic flybys last 20 seconds, synced to Rotating Form at 96 BPM. Preview and recording start the soundtrack from the beginning.</p>
+        <p class="control-note">Cinematic orbit, Beat cuts and Spiral rise each last 20 seconds and follow Rotating Form at 96 BPM. The track starts from the beginning in previews and recordings.</p>
         <p class="error-message" id="export-error" role="alert" hidden></p>
       </section>
-      <footer class="panel-footer"><span class="iso-cube">◇</span><div>Orthographic view<span>Parallel lines. No perspective.</span></div></footer>
+      <footer class="panel-footer"><span class="iso-cube">◇</span><div>Orthographic view<span>Parallel edges stay parallel.</span></div></footer>
     </aside>
   </main>
-  <footer class="statusbar"><span><span class="status-mark"></span><span id="status-text">Ready to present</span></span><span>ESC <span class="status-muted">· reset framing</span><span class="status-separator">/</span>SPACE <span class="status-muted">· pause</span></span></footer>
+  <footer class="statusbar"><span><span class="status-mark"></span><span id="status-text">Ready</span></span><span>ESC <span class="status-muted">· reset framing</span><span class="status-separator">/</span>SPACE <span class="status-muted">· pause</span></span></footer>
   <audio id="background-music" src="/assets/rotating-form-CRkQZD6o.mp3" preload="none" loop hidden></audio>
   <noscript>Enable JavaScript in your browser to view 3D models.</noscript>
 </body>
