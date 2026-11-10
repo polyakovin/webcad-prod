@@ -11,15 +11,16 @@
     <script>
       // Vite's preview falls back here for slashless directory URLs.
       const { pathname, search, hash } = window.location;
-      if (["/mesh-editor", "/workspace", "/gear-generator", "/boolean-operations", "/svg-extruder", "/model-stand", "/dxf-viewer", "/text-extruder"].includes(pathname)) {
+      if (["/about", "/mesh-editor", "/workspace", "/gear-generator", "/boolean-operations", "/svg-extruder", "/model-stand", "/dxf-viewer", "/text-extruder"].includes(pathname)) {
         window.location.replace(pathname + "/" + search + hash);
       }
     </script>
-    <script type="module" crossorigin src="/assets/landing-DoZ0VQks.js"></script>
+    <script type="module" crossorigin src="/assets/landing-B0CRaP2U.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/theme-1nkSz7m6.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-theme-BiqclD-S.js">
     <link rel="modulepreload" crossorigin href="/assets/preload-helper-BXl3LOEh.js">
     <link rel="stylesheet" crossorigin href="/assets/theme-8jM4M90x.css">
-    <link rel="stylesheet" crossorigin href="/assets/landing-K5INtnqZ.css">
+    <link rel="stylesheet" crossorigin href="/assets/site-theme-Ce7Dn8xQ.css">
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +29,7 @@
         <a class="wordmark" href="/" aria-label="WebCAD home">
           <img src="/assets/webcad-logo-mOBmCley.svg" width="132" height="34" alt="" />
         </a>
-        <nav aria-label="WebCAD tools">
+        <nav aria-label="Main navigation">
           <a href="/workspace/">Workspace</a>
           <a href="/gear-generator/">Gear Generator</a>
           <a href="/svg-extruder/">SVG Extruder</a>
@@ -37,6 +38,7 @@
           <a href="/model-stand/">Model Stand</a>
           <a href="/dxf-viewer/">DXF Viewer</a>
           <a href="/text-extruder/">Text Extruder</a>
+          <a href="/about/">About</a>
         </nav>
         <button type="button" class="theme-toggle" aria-label="Dark theme" title="Dark theme" aria-pressed="false"></button>
       </div>
@@ -199,24 +201,147 @@
         </div>
       </section>
 
-      <section class="local-section container" aria-labelledby="local-title">
-        <div class="local-note">
-          <svg class="local-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg>
-          <div>
-            <h2 id="local-title">Your files stay on your device</h2>
-            <p>Workspace saves your project in this browser. Download a JSON copy to back it up or open it on another device.</p>
+      <section class="content-section container" id="getting-started" aria-labelledby="getting-started-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="section-index">02</span> / Quick start</p>
+          <h2 id="getting-started-title">Get started</h2>
+        </div>
+        <ol class="start-steps" role="list">
+          <li>
+            <span class="step-number mono" aria-hidden="true">01</span>
+            <h3>Pick a tool</h3>
+            <p>Open <a href="/workspace/">Workspace</a> to sketch a part, or choose a tool for the file you already have.</p>
+          </li>
+          <li>
+            <span class="step-number mono" aria-hidden="true">02</span>
+            <h3>Try a sample or open a file</h3>
+            <p>Start with the gear in <a href="/gear-generator/">Gear Generator</a>, or open an STL in <a href="/mesh-editor/">Mesh Editor</a>. Adjust the settings and check the preview.</p>
+          </li>
+          <li>
+            <span class="step-number mono" aria-hidden="true">03</span>
+            <h3>Download the result</h3>
+            <p>Export an STL for your slicer, or download a JSON project from Workspace if you want to keep editing it later.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="content-section benefits-section" aria-labelledby="benefits-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow"><span class="section-index">03</span> / The basics</p>
+            <h2 id="benefits-title">Why use WebCAD?</h2>
+          </div>
+          <ul class="benefit-grid" role="list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01m3 0h.01"/></svg>
+              <h3>Runs in your browser</h3>
+              <p>Open a tool in a tab and work on your files there. There’s nothing to install.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 7.5-2M12 14v3"/></svg>
+              <h3>No account to create</h3>
+              <p>You can open any tool and download your result without signing in to WebCAD.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              <h3>A tool for each common job</h3>
+              <p>Generate a gear, drill a hole in an STL, or record a turntable in a tool built for that job.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h2m6 0h8M4 17h8m6 0h2"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></svg>
+              <h3>Easy to start</h3>
+              <p>Try the settings in the preview. In Workspace, for example, drag a flat face to extrude it or type in a precise distance.</p>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm7 0v5h5M8 13h8m-8 4h5"/></svg>
+              <h3>Familiar file formats</h3>
+              <p>Use STL for meshes, SVG and DXF for 2D profiles, and OBJ or basic 3MF to show a model in Model Stand.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="content-section container faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="section-index">04</span> / FAQ</p>
+          <h2 id="faq-title">Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Do I need to install anything or sign up?</summary>
+            <p>No. Use a modern desktop browser with WebGL for the 3D previews. You don’t need a WebCAD account.</p>
+          </details>
+          <details>
+            <summary>Which files can I open?</summary>
+            <p>Use <a href="/mesh-editor/">Mesh Editor</a> or <a href="/boolean-operations/">Boolean Operations</a> for closed STL meshes. <a href="/model-stand/">Model Stand</a> opens STL, OBJ and basic 3MF files. Use <a href="/svg-extruder/">SVG Extruder</a> for filled SVG paths and <a href="/dxf-viewer/">DXF Viewer</a> for text-based 2D DXF drawings. Workspace opens WebCAD JSON projects. STEP isn’t supported.</p>
+          </details>
+          <details>
+            <summary>Are my models uploaded anywhere?</summary>
+            <p>No. WebCAD reads the files you open and processes them in your browser.</p>
+          </details>
+          <details>
+            <summary>How do I save a project to edit later?</summary>
+            <p>Workspace saves your current project in this browser. Download a JSON copy before clearing site data or switching devices. STL stores the mesh without the editable feature history.</p>
+          </details>
+          <details>
+            <summary>Can I use an STL for 3D printing?</summary>
+            <p>Yes. Open the STL in your slicer to check the size and prepare it for your printer. STL files don’t store units, so check the imported dimensions before slicing.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="container closing-section" aria-labelledby="closing-title">
+        <div class="closing-panel">
+          <div class="section-heading">
+            <h2 id="closing-title">Make your first part</h2>
+            <p>Open Workspace to explore the motor mount example or sketch a part of your own.</p>
+          </div>
+          <div class="closing-actions">
+            <a class="button button-primary" href="/workspace/">Open Workspace <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#tools">See all tools <span aria-hidden="true">↑</span></a>
           </div>
         </div>
-        <a class="text-link" href="/workspace/">Start modeling <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="wordmark" href="/" aria-label="WebCAD home">
-          <img src="/assets/webcad-logo-mOBmCley.svg" width="108" height="28" alt="" />
-        </a>
-        <a class="mono footer-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      <div class="container">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div>
+            <h2 class="eyebrow">Create</h2>
+            <ul>
+              <li><a href="/workspace/">Workspace</a></li>
+              <li><a href="/gear-generator/">Gear Generator</a></li>
+              <li><a href="/svg-extruder/">SVG Extruder</a></li>
+              <li><a href="/text-extruder/">Text Extruder</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="eyebrow">Edit and view</h2>
+            <ul>
+              <li><a href="/mesh-editor/">Mesh Editor</a></li>
+              <li><a href="/boolean-operations/">Boolean Operations</a></li>
+              <li><a href="/dxf-viewer/">DXF Viewer</a></li>
+              <li><a href="/model-stand/">Model Stand</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="eyebrow">WebCAD</h2>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="#tools">Toolkit</a></li>
+              <li><a href="#getting-started">Get started</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/about/">About</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="site-credit">
+          <a class="wordmark" href="/" aria-label="WebCAD home">
+            <img src="/assets/webcad-logo-mOBmCley.svg" width="132" height="34" alt="" />
+          </a>
+          <p>Created by <a href="/about/#contact">Igor Polyakov</a></p>
+        </div>
       </div>
     </footer>
   </body>
